@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./by-region-page.component.css']
 })
 export class ByRegionPageComponent {
+  public searchValue(value:string){
+    console.log(value);
+  }
 
 }
