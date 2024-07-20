@@ -7,7 +7,11 @@
 </div>
 <div class="row mt-3">
   <div class="col text-white">
-    table
+    <div *ngIf="countryByName.length === 0" class="col-12 alert-dark text-white text-center">
+      No existen paises con esa busqueda.
+    </div>
+    
+    <countries-country-table [countries]="countryByName"></countries-country-table>
   </div>
 </div>
 

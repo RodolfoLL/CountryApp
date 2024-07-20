@@ -9,11 +9,20 @@
   </div>
 </div>
 <div class="row mt-3">
-  <div class="col text-white" >
-    <ul class="list-group">
-      <li *ngFor="let capital of countriesByCapital" class="list-group-item">
-        {{ capital.capital }}
-      </li>
-    </ul>
+  <div
+    *ngIf="countriesByCapital.length === 0; else elseTemplate"
+    class="col-12 alert-dark text-white text-center"
+  >
+    No hay paises con esa capital.
+  </div>
+  <ng-template #elseTemplate>
+    <shared-lazy-search *ngIf="isLoading === true"></shared-lazy-search>
+  </ng-template>
+
+  <div class="col text-white">
+    <countries-country-table
+      [countries]="countriesByCapital"
+      *ngIf="!isLoading"
+    ></countries-country-table>
   </div>
 </div>
