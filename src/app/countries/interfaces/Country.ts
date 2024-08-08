@@ -96,6 +96,9 @@ export interface Languages {
   ara?: string;
   glv?: string;
   slk?: string;
+  aym?:string;
+  que?:string;
+  grn?:string;
 }
 
 export interface Maps {
