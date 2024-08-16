@@ -13,6 +13,7 @@ export class CountryPageComponent implements OnInit {
   public country:Country | null = null;
   public languages: Languages | undefined ;
   public vector : string[] = [];
+  
   constructor(
     private activatedRoute: ActivatedRoute,
     private ServiceCountries: ServiceCountries,
@@ -31,8 +32,9 @@ export class CountryPageComponent implements OnInit {
       }
       this.country = country;
       console.log(country)
-      this.languages = this.country!.languages;
-      this.vector = Object.values(this.languages)
+      this.languages = this.country?.languages;
+      this.vector = Object.values(this.languages!)
+
       console.log(this.vector)
     }
     );

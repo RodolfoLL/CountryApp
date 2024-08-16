@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ServiceCountries } from '../../services/countries.service';
 import { Country } from '../../interfaces/Country';
 @Component({
@@ -6,12 +6,20 @@ import { Country } from '../../interfaces/Country';
   templateUrl: './by-country-page.component.html',
   styleUrls: ['./by-country-page.component.css'],
 })
-export class ByCountryPageComponent {
+export class ByCountryPageComponent{
   public countryByName: Country[] = [];
+  public isLoading : boolean = false;
   constructor(private ServiceCountries: ServiceCountries) {}
+
+
   searchValue(value: string) {
+    this.isLoading = true;
+
     this.ServiceCountries.searchCountry(value).subscribe(
-      (data) => (this.countryByName = data)
+      (data) => {
+        this.countryByName = data
+        this.isLoading = false;
+      }
     );
   }
 }

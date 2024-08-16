@@ -10,12 +10,13 @@
   <div class="col">
     <ul class="list-group">
       <li class="list-group-item"><strong>Capital: </strong>{{country.capital}}</li>
-      <li class="list-group-item"><strong>Poblacion:  </strong>{{country.population | number}}</li>
-      <li class="list-group-item"><strong>Nombre Oficial: </strong>{{country.name.nativeName['spa'].official}}</li>
-      <li class="list-group-item"><strong>Moneda Oficial:  </strong>{{country.currencies['BOB'].symbol}}</li>
+      <li class="list-group-item"><strong>Poblacion:  </strong>{{country.population | number}} habitantes</li>
+      <!-- <li class="list-group-item"><strong>Nombre Oficial: </strong>{{nameCountry}}</li> -->
+      <!-- <li class="list-group-item"><strong>Moneda Oficial:  </strong>{{nameCountry}}</li> -->
       <li class="list-group-item d-flex gap-1"><strong>Lenguajes:</strong>
-        <p *ngFor="let languaje of vector">  {{ languaje }}   </p>
+        <p *ngFor="let value of vector">  {{ value }}   </p>
       </li>
     </ul>
   </div>
 </div>
+

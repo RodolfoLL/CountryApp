@@ -7,9 +7,10 @@
 </div>
 <div class="row mt-3">
   <div class="col text-white">
-    <div *ngIf="countriesByRegion.length === 0" class="col-12 alert-dark text-white text-center">
+    <shared-lazy-search *ngIf="isLoading"></shared-lazy-search>
+    <div *ngIf="countriesByRegion.length === 0 && !isLoading" class="col-12 alert-dark text-white text-center">
       No hay paises con esa region.
     </div>
-    <countries-country-table [countries]="countriesByRegion" [region]="true" ></countries-country-table>
+    <countries-country-table [countries]="countriesByRegion" [region]="true" *ngIf="!isLoading"></countries-country-table>
   </div>
 </div>
