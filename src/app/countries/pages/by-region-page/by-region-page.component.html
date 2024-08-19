@@ -1,16 +1,35 @@
 <h3 class="text-white">Por Region</h3>
-<hr>
+<hr />
 <div class="row">
-  <div class="col">
+  <!-- <div class="col">
     <shared-search-box placeholder="Buscar por region" (onValue)="searchValue($event)"></shared-search-box>
+  </div> -->
+  <div class="row">
+    <div class="col text-center  ">
+      <button
+        class="btn mx-2 text-white"
+        [ngClass]="{'btn-primary':selectedRegion ===region}"
+        *ngFor="let region of regions"
+        (click)="searchValue(region)"
+      >
+        {{ region }}
+      </button>
+    </div>
   </div>
 </div>
 <div class="row mt-3">
   <div class="col text-white">
     <shared-lazy-search *ngIf="isLoading"></shared-lazy-search>
-    <div *ngIf="countriesByRegion.length === 0 && !isLoading" class="col-12 alert-dark text-white text-center">
+    <div
+      *ngIf="countriesByRegion.length === 0 && !isLoading"
+      class="col-12 alert-dark text-white text-center"
+    >
       No hay paises con esa region.
     </div>
-    <countries-country-table [countries]="countriesByRegion" [region]="true" *ngIf="!isLoading"></countries-country-table>
+    <countries-country-table
+      [countries]="countriesByRegion"
+      [region]="true"
+      *ngIf="!isLoading"
+    ></countries-country-table>
   </div>
 </div>

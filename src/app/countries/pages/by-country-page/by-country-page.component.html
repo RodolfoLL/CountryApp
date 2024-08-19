@@ -1,17 +1,26 @@
 <h3 class="text-white">Por Pais</h3>
-<hr>
+<hr />
 <div class="row">
   <div class="col">
-    <shared-search-box placeholder="Buscar por pais" (onValue)="searchValue($event)"></shared-search-box>
+    <shared-search-box
+      placeholder="Buscar por pais"
+      (onDebouncer)="searchValue($event)"
+      [initialValue]="initialValueCountry"
+    ></shared-search-box>
   </div>
 </div>
 <div class="row mt-3">
   <div class="col text-white">
     <shared-lazy-search *ngIf="isLoading"></shared-lazy-search>
-    <div *ngIf="countryByName.length === 0 && !isLoading" class="col-12 alert alert-info  text-center">
+    <div
+      *ngIf="countryByName.length === 0 && !isLoading"
+      class="col-12 alert alert-info text-center"
+    >
       No existen paises.
     </div>
-    <countries-country-table [countries]="countryByName" *ngIf="!isLoading"></countries-country-table>
+    <countries-country-table
+      [countries]="countryByName"
+      *ngIf="!isLoading"
+    ></countries-country-table>
   </div>
 </div>
-
