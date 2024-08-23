@@ -28,8 +28,8 @@ export class ServiceCountries {
   }
   private getCountries(url: string): Observable<Country[]> {
     const searchCountry = this.http.get<Country[]>(url).pipe(
-      catchError(() => of([]))
-      // delay(2000))
+      catchError(() => of([])),
+      // delay(6000)
     );
 
     return searchCountry;
