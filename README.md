@@ -4,6 +4,8 @@ CountryApp es una SPA realizada con el framework Angular en su version 16.0.0 co
 CountryApp usa la api [RestCountries](https://restcountries.com/)
 el cual nos brinda informacion de diferentes paises, tambien podemos obtener paises por region,capital o por su alphaCode un ejemplo para Bolivia seria BL.
 
+Para ver el proyecto ingresar al siguiente link [Demo App](https://rodolfoll.github.io/CountryApp/)
+
 Para hacer la busqueda de los paises por su capital,region o su alphacode se utiliza diferentes endpoits que nos provee la api en su pagina oficial.
 ## Estructura del proyecto
 La estructura del proyecto es compuesta con dos modulos estos son el modulo countires y el modulo shared.
